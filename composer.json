@@ -1,0 +1,34 @@
+{
+	"name":"cliffparnitzky/form-external-forwarding",
+	"description":"Offers the possibility for forms to define an external URL as forwarding destination.",
+	"keywords":["contao","form","form generator","external", "action", "forward"],
+	"type":"contao-module",
+	"license":"LGPL-3.0+",
+	"authors":[
+		{
+			"name":"Cliff Parnitzky",
+			"email":"contao@cliff-parnitzky.de",
+			"role":"Developer"
+		}
+	],
+	"support":{
+		"email":"contao@cliff-parnitzky.de",
+		"issues":"https://github.com/cliffparnitzky/FormExternalForwarding/issues",
+		"source":"https://github.com/cliffparnitzky/FormExternalForwarding"
+	},
+	"require":{
+		"php":">=5.3",
+		"contao/core":">=3.0.0,<4.0.0-dev",
+		"contao-community-alliance/composer-installer":"*"
+	},
+	"extra":{
+		"contao":{
+			"sources":{
+				"system/modules/FormExternalForwarding":"system/modules/FormExternalForwarding"
+			}
+		},
+		"branch-alias": {
+			"dev-master": "1.0.x-dev"
+		}
+	}
+}
