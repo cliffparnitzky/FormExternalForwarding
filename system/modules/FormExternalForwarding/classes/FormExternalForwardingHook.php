@@ -37,49 +37,47 @@
 class FormExternalForwardingHook extends \System
 {
 	/**
-	 * Set mail recipient
-	 * @return array
+	 * Implementation of process form data HOOK
 	 */
-	//$arrSubmitted, $arrFiles, $intOldId, &$arrFor, $arrLabels
-	public function processFormData($arrData, $arrForm){
-		if (strlen($arrForm['external_forwarding_url']) > 0)
+	public function processFormData($arrData, $arrFormData, $arrFiles, $arrLabels, $objForm)
+	{
+		if (strlen($arrFormData['external_forwarding_url']) > 0)
 		{
 			// unset values from contao form framework
 			unset($arrData['REQUEST_TOKEN']);
 			unset($arrData['FORM_SUBMIT']);
 			
 			$parameterArrays = array();
+			if ($arrFormData['external_forwarding_remove_empty_parameters'])
+			{
+				$arrData = array_filter($arrData);
+			}
 			foreach($arrData as $key=>$value)
 			{
-				// remove empty fields, if set in form
-				if ($arrForm['external_forwarding_remove_empty_parameters'] && ((is_array($value) && count($value) == 0) || (!is_array($value) && strlen($value) == 0)))
+				if (is_array($value))
 				{
+					// remove empty fields, if set in form
+					if ($arrFormData['external_forwarding_remove_empty_parameters'])
+					{
+						$value = array_filter($value);
+					}
+					
+					// collect and encode array parameters
+					$arrValues = array();
+					foreach ($value as $v)
+					{
+						$arrValues[] = urlencode($v);
+					}
+					if (count($arrValues) > 0)
+					{
+						$parameterArrays[] = $key. '[]=' . implode("&" . $key. '[]=', $arrValues);
+					}
 					unset($arrData[$key]);
 					unset($arrData[$key. '[]']);
 				}
-				else
-				{
-					if (is_array($value))
-					{
-						// remove empty fields, if set in form
-						if ($arrForm['external_forwarding_remove_empty_parameters'])
-						{
-							$value = array_filter($value);
-						}
-						// collect and encode array parameters
-						$arrValues = array();
-						foreach ($value as $v)
-						{
-							$arrValues[] = urlencode($v);
-						}
-						$parameterArrays[] = $key. '[]=' . implode("&" . $key. '[]=', $arrValues);
-						unset($arrData[$key]);
-						unset($arrData[$key. '[]']);
-					}
-				}
 			}
 			// prepare url
-			$forwardingUrl = $arrForm['external_forwarding_url'];
+			$forwardingUrl = $arrFormData['external_forwarding_url'];
 			if (strpos($forwardingUrl, '?') === false)
 			{
 				$forwardingUrl .= '?';
@@ -106,6 +104,20 @@ class FormExternalForwardingHook extends \System
 			//echo "to: <a href='" . $forwardingUrl . "'>" . $forwardingUrl . "</a>";
 			\Controller::redirect($forwardingUrl);
 		}
+	}
+	
+	/**
+	 * Implementation of compile form fields HOOK
+	 */
+	public function compileFormFields($arrFields, $formId, $objForm)
+	{
+		if (strlen($objForm->external_forwarding_url) > 0 && $objForm->external_forwarding_open_in_new_window)
+		{
+			$arrAttributes = deserialize($objForm->__get('attributes'));
+			$arrAttributes[1] = $arrAttributes[1] . '" target="_blank';
+			$objForm->__set('attributes', serialize($arrAttributes));
+		}
+		return $arrFields;
 	}
 }
 

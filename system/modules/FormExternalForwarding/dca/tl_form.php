@@ -30,7 +30,7 @@
 /**
  * Add to palette
  */
-$GLOBALS['TL_DCA']['tl_form']['palettes']['default'] = str_replace('{email_legend}', '{external_forwarding_legend},external_forwarding_url,external_forwarding_remove_empty_parameters;{email_legend}', $GLOBALS['TL_DCA']['tl_form']['palettes']['default']);
+$GLOBALS['TL_DCA']['tl_form']['palettes']['default'] = str_replace('{email_legend}', '{external_forwarding_legend},external_forwarding_url,external_forwarding_remove_empty_parameters,external_forwarding_open_in_new_window;{email_legend}', $GLOBALS['TL_DCA']['tl_form']['palettes']['default']);
 
 /**
  * Add fields
@@ -46,6 +46,14 @@ $GLOBALS['TL_DCA']['tl_form']['fields']['external_forwarding_url'] = array
 $GLOBALS['TL_DCA']['tl_form']['fields']['external_forwarding_remove_empty_parameters'] = array
 ( 
 	'label'      => &$GLOBALS['TL_LANG']['tl_form']['external_forwarding_remove_empty_parameters'], 
+	'exclude'    => true, 
+	'inputType'  => 'checkbox', 
+	'eval'       => array('tl_class'=>'w50'),
+	'sql'        => "char(1) NOT NULL default ''" 
+);
+$GLOBALS['TL_DCA']['tl_form']['fields']['external_forwarding_open_in_new_window'] = array
+( 
+	'label'      => &$GLOBALS['TL_LANG']['tl_form']['external_forwarding_open_in_new_window'], 
 	'exclude'    => true, 
 	'inputType'  => 'checkbox', 
 	'eval'       => array('tl_class'=>'w50'),

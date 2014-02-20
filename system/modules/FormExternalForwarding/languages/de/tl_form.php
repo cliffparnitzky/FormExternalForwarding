@@ -32,6 +32,7 @@
  */
 $GLOBALS['TL_LANG']['tl_form']['external_forwarding_url']                     = array("Weiterleitungs URL", "Geben Sie die URL einer externen Webseite an, auf die beim Absenden des Formulars weiterleitetet werden soll.<br/><br/>Als <b>" . $GLOBALS['TL_LANG']['tl_form']['method'][0] . "</b> muss <u>POST</u> gewählt sein.<br/><br/>Bei der Weiterleitung werden dann die Werte der Felder als GET-Parameter an die URL angefügt.");
 $GLOBALS['TL_LANG']['tl_form']['external_forwarding_remove_empty_parameters'] = array("Felder mit leeren Werten entfernen", "Wählen Sie, ob leere Felder an die Weiterleitungs URL angefügt werden sollen oder nicht.");
+$GLOBALS['TL_LANG']['tl_form']['external_forwarding_open_in_new_window']      = array("In neuem Fenster öffnen", "Wählen Sie ob das Formular beim Absenden in einem neuen Browserfenster geöffnet werden soll.");
 
 /**
  * Legends

@@ -32,6 +32,7 @@
  */
 $GLOBALS['TL_LANG']['tl_form']['external_forwarding_url']                     = array("Forwarding URL", "Select an URL of an external website, where to forward after submitting the form.<br/><br/>The <b>" . $GLOBALS['TL_LANG']['tl_form']['method'][0] . "</b> has to be <u>POST</u>.<br/><br/>When forwarding the values of the fields will be appended as a GET parameter to the URL.");
 $GLOBALS['TL_LANG']['tl_form']['external_forwarding_remove_empty_parameters'] = array("Remove fields with empty values", "Select whether empty fields should be added to the forwarding URL or not.");
+$GLOBALS['TL_LANG']['tl_form']['external_forwarding_open_in_new_window']      = array("Open in new window", "Select whether the form should be opened in a new browser window. when sending.");
 
 /**
  * Legends

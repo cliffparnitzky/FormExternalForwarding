@@ -30,6 +30,7 @@
 /**
  * Hooks
  */
-$GLOBALS['TL_HOOKS']['processFormData'][] = array('FormExternalForwardingHook', 'processFormData'); 
+$GLOBALS['TL_HOOKS']['processFormData'][]   = array('FormExternalForwardingHook', 'processFormData'); 
+$GLOBALS['TL_HOOKS']['compileFormFields'][] = array('FormExternalForwardingHook', 'compileFormFields'); 
 
 ?>
