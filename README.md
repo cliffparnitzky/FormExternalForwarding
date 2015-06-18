@@ -25,7 +25,7 @@ https://github.com/cliffparnitzky/FormExternalForwarding/issues
 Compatibility
 -------------
 
-- min. Contao version: >= 3.3.0
+- min. Contao version: >= 3.2.0
 - max. Contao version: <  3.6.0
 
 
