@@ -5,7 +5,7 @@
 Contao Extension: FormExternalForwarding
 ========================================
 
-Offers the possibility for forms to define an external URL as forwarding destination.
+Offers the possibility for forms to define an external URL as forwarding destination (parameters are send via GET).
 
 
 Installation

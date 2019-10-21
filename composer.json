@@ -1,6 +1,6 @@
 {
 	"name":"cliffparnitzky/form-external-forwarding",
-	"description":"Offers the possibility for forms to define an external URL as forwarding destination.",
+	"description":"Offers the possibility for forms to define an external URL as forwarding destination (parameters are send via GET).",
 	"keywords":["contao","form","form generator","external", "action", "forward"],
 	"type":"contao-module",
 	"license":"LGPL-3.0+",
