@@ -1,33 +1,37 @@
 {
-	"name":"cliffparnitzky/form-external-forwarding",
-	"description":"Offers the possibility for forms to define an external URL as forwarding destination (parameters are send via GET).",
-	"keywords":["contao","form","form generator","external", "action", "forward"],
-	"type":"contao-module",
-	"license":"LGPL-3.0+",
-	"authors":[
+	"name": "cliffparnitzky/form-external-forwarding",
+	"description": "Offers the possibility for forms to define an external URL as forwarding destination (parameters are send via GET).",
+	"keywords": [
+		"contao",
+		"form",
+		"form generator",
+		"external",
+		"action",
+		"forward"
+	],
+	"type": "contao-module",
+	"license": "LGPL-3.0+",
+	"authors": [
 		{
-			"name":"Cliff Parnitzky",
-			"email":"contao@cliff-parnitzky.de",
-			"role":"Developer"
+			"name": "Cliff Parnitzky",
+			"email": "contao@cliff-parnitzky.de",
+			"role": "Developer"
 		}
 	],
-	"support":{
-		"email":"contao@cliff-parnitzky.de",
-		"issues":"https://github.com/cliffparnitzky/FormExternalForwarding/issues",
-		"source":"https://github.com/cliffparnitzky/FormExternalForwarding"
+	"support": {
+		"email": "contao@cliff-parnitzky.de",
+		"issues": "https://github.com/cliffparnitzky/FormExternalForwarding/issues",
+		"source": "https://github.com/cliffparnitzky/FormExternalForwarding"
 	},
-	"require":{
-		"php":">=5.3",
-		"contao/core-bundle":"~3.2 || ~4.4",
-		"contao-community-alliance/composer-plugin":"~2.4 || ~3.0"
+	"require": {
+		"php": ">=5.3",
+		"contao/core-bundle": "~3.2 || ~4.4",
+		"contao-community-alliance/composer-plugin": "~2.4 || ~3.0"
 	},
-	"conflict": {
-		"contao/core":"3.4.0,3.4.1,3.4.2"
-	},
-	"extra":{
-		"contao":{
-			"sources":{
-				"system/modules/FormExternalForwarding":"system/modules/FormExternalForwarding"
+	"extra": {
+		"contao": {
+			"sources": {
+				"system/modules/FormExternalForwarding": "system/modules/FormExternalForwarding"
 			}
 		},
 		"branch-alias": {
